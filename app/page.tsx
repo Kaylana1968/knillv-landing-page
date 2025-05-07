@@ -1,11 +1,37 @@
+'use client'
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import KnillvDark from "@/public/knillvDark.png";
 import caisse from "@/public/caisse.png";
 
 export default function Page() {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+           
     return (
         <main>
-            <nav className="flex justify-between items-center px-8 py-4 bg-gray-100 shadow-md">
+             <nav className="flex justify-between items-center px-8 py-4 bg-gray-100 shadow-md">
                 <div className="flex items-center gap-2">
                     <Image src={KnillvDark.src} alt="Logo" width={40} height={40} />
                 </div>
@@ -24,9 +50,8 @@ export default function Page() {
                     </div>
                 </div>
             </nav>
-
+     
             <section id="accueil" className="flex flex-row items-center justify-between h-screen px-16">
-
                 <div className="flex flex-col items-start">
                     <Image src={KnillvDark.src} alt="Logo" width={200} height={200} />
                     <h6 className="text-4xl font-bold mt-4">
@@ -40,16 +65,33 @@ export default function Page() {
                         Essayer gratuitement
                     </button>
                 </div>
-
                 <div className="flex items-center">
-                    <Image src={caisse.src} alt="Caisse" width={600} height={600}
-                    />
+                    <Image src={caisse.src} alt="Caisse" width={600} height={600} />
                 </div>
             </section>
-            <section id="fonctionnalites" className="flex flex-col items-center justify-center h-screen px-10 bg-gray-50">
-                <h2 className="text-4xl font-bold text-gray-800 mb-8">Fonctionnalités</h2>
+
+
+            <section
+                id="fonctionnalites"
+                ref={sectionRef}
+                className="flex flex-col items-center justify-center h-screen px-10 bg-gray-50"
+            >
+                <h2 className="text-4xl font-bold text-gray-800 mb-8 ext-blue-500 ">
+                    {Array.from("FONCTIONNALITÉS").map((letter, index) => (
+                        <span
+                            key={index}
+                            className={`inline-block opacity-0 ${
+                                isVisible ? "animate-fade-in-letter" : ""
+                            }`}
+                            style={{
+                                animationDelay: `${index * 0.1}s`,
+                            }}
+                        >
+                            {letter}
+                        </span>
+                    ))}
+                </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-           
                     <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md">
                         <Image src="/path/to/feature1.png" alt="Fonctionnalité 1" width={100} height={100} />
                         <h3 className="text-2xl font-semibold mt-4">Facilité d'utilisation</h3>
@@ -57,7 +99,6 @@ export default function Page() {
                             Une interface intuitive pour une prise en main rapide.
                         </p>
                     </div>
-              
                     <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md">
                         <Image src="/path/to/feature2.png" alt="Fonctionnalité 2" width={100} height={100} />
                         <h3 className="text-2xl font-semibold mt-4">Gestion complète</h3>
@@ -65,7 +106,6 @@ export default function Page() {
                             Gérez vos ventes, stocks et clients en un seul endroit.
                         </p>
                     </div>
-              
                     <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md">
                         <Image src="/path/to/feature3.png" alt="Fonctionnalité 3" width={100} height={100} />
                         <h3 className="text-2xl font-semibold mt-4">Support 24/7</h3>
@@ -73,8 +113,8 @@ export default function Page() {
                             Une assistance disponible à tout moment pour vous aider.
                         </p>
                     </div>
-    </div>
-</section>
+                </div>
+            </section>
         </main>
     );
 }

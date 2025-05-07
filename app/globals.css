@@ -19,7 +19,7 @@
   }
 }
 
-@keyframes fade-in {
+@keyframes fade-in-letter {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -28,6 +28,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.animate-fade-in-letter {
+  animation: fade-in-letter 0.5s ease-out forwards;
 }
 body {
   font-family: 'Inter', sans-serif;
