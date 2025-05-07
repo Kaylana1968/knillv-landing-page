@@ -3,6 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import KnillvDark from "@/public/knillvDark.png";
 import caisse from "@/public/caisse.png";
+import fonct1 from "@/public/fonct1.png";
+import fonct2 from "@/public/fonct2.png";
+import fonct3 from "@/public/fonct3.png";
 
 export default function Page() {
     const [isVisible, setIsVisible] = useState(false);
@@ -93,24 +96,24 @@ export default function Page() {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md">
-                        <Image src="/path/to/feature1.png" alt="Fonctionnalité 1" width={100} height={100} />
+                    <Image src={fonct1.src} alt="fonct1" width={210} height={210} />
                         <h3 className="text-2xl font-semibold mt-4">Facilité d'utilisation</h3>
                         <p className="text-gray-600 mt-2">
                             Une interface intuitive pour une prise en main rapide.
                         </p>
                     </div>
                     <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md">
-                        <Image src="/path/to/feature2.png" alt="Fonctionnalité 2" width={100} height={100} />
+                        <Image src={fonct2.src} alt="fonct2" width={150} height={150} />
                         <h3 className="text-2xl font-semibold mt-4">Gestion complète</h3>
                         <p className="text-gray-600 mt-2">
                             Gérez vos ventes, stocks et clients en un seul endroit.
                         </p>
                     </div>
                     <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md">
-                        <Image src="/path/to/feature3.png" alt="Fonctionnalité 3" width={100} height={100} />
-                        <h3 className="text-2xl font-semibold mt-4">Support 24/7</h3>
+                        <Image src={fonct3.src} alt="fonct2" width={200} height={200} />
+                        <h3 className="text-2xl font-semibold mt-4">Multi-plateformes</h3>
                         <p className="text-gray-600 mt-2">
-                            Une assistance disponible à tout moment pour vous aider.
+                            Disponible même sur vos appareils mobiles.
                         </p>
                     </div>
                 </div>
