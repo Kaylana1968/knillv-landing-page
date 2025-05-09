@@ -56,7 +56,6 @@ export default function Page() {
                     </div>
                 </div>
             </nav>
-     
             <section id="accueil" className="flex flex-row items-center justify-between h-screen px-16">
                 <div className="flex flex-col items-start">
                     <Image src={KnillvDark.src} alt="Logo" width={200} height={200} />
@@ -75,7 +74,6 @@ export default function Page() {
                     <Image src={caisse.src} alt="Caisse" width={600} height={600} />
                 </div>
             </section>
-
 
             <section
                 id="fonctionnalites"
@@ -125,7 +123,6 @@ export default function Page() {
                 id="tarif"
                 className="relative flex flex-col items-center justify-center h-screen px-10 overflow-hidden"
             >
-                {/* Vidéo en arrière-plan */}
                 <video
                     autoPlay
                     loop
@@ -135,8 +132,6 @@ export default function Page() {
                     <source src="/fondbleu.mp4" type="video/mp4" />
                     Votre navigateur ne supporte pas les vidéos HTML5.
                 </video>
-
-                {/* Contenu de la section */}
                 <h2 className="text-4xl font-bold text-white mb-8  z-10">
                     Forfait annuel 
                 </h2>
@@ -163,7 +158,6 @@ export default function Page() {
     <h2 className="text-4xl font-bold text-gray-700 mb-8">Nous Contacter</h2>
     <p> Besoin d’un renseignement, envie d’essayer, ou un retour à partager ? On est là pour vous.</p>
     <div className="flex flex-row items-center justify-between p-8 rounded-lg shadow-[8px_8px_16px_rgba(0,0,0,0.2),-8px_-8px_16px_rgba(255,255,255,0.5)] bg-[#ebf0f3] w-full max-w-4xl">
-        {/* Formulaire */}
         <form className="flex flex-col w-1/2">
             <div className="mb-4">
                 <label htmlFor="name" className="block text-gray-600 font-medium mb-2">
@@ -224,6 +218,18 @@ export default function Page() {
         </div>
             </div>
         </section>
+        <footer className="bg-gray-800 text-white py-6 px-8">
+            <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto">
+                <div className="text-center md:text-left mb-4 md:mb-0">
+                    <h3 className="text-lg font-semibold">Contactez-nous</h3>
+                    <p className="text-gray-400">Email : <a href="mailto:knillv.pos@gmail.com" className="text-blue-400 hover:underline">knillv.pos@gmail.com</a></p>
+                    <p className="text-gray-400">Téléphone : <a href="tel:0782876899" className="text-blue-400 hover:underline">0782876899</a></p>
+                </div>
+                <div className="text-center md:text-right">
+                    <p className="text-gray-400">© 2025 Knillv. Tous droits réservés.</p>
+                </div>
+            </div>
+        </footer>
         </main>
     );
-}
+};
