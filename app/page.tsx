@@ -7,6 +7,7 @@ import fonct1 from "@/public/fonct1.png";
 import fonct2 from "@/public/fonct2.png";
 import fonct3 from "@/public/fonct3.png";
 
+
 export default function Page() {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
@@ -117,6 +118,38 @@ export default function Page() {
                         </p>
                     </div>
                 </div>
+            </section>
+            <section
+                id="tarif"
+                className="relative flex flex-col items-center justify-center h-screen px-10 overflow-hidden"
+            >
+                {/* Vidéo en arrière-plan */}
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+                >
+                    <source src="/fondbleu.mp4" type="video/mp4" />
+                    Votre navigateur ne supporte pas les vidéos HTML5.
+                </video>
+
+                {/* Contenu de la section */}
+                <h2 className="text-4xl font-bold text-white mb-8  z-10">
+                    Forfait annuel 
+                </h2>
+                <div className="flex flex-col items-center text-center p-6 rounded-lg shadow-[1.92px_1.92px_4.8px_hsl(0,0%,75%),-1.92px_-1.92px_4.8px_hsl(0,0%,100%),inset_-0.06px_-0.06px_0.24px_hsl(0,0%,75%),inset_0.06px_0.06px_0.24px_hsl(0,0%,100%)] bg-white/30 backdrop-blur-md z-10">
+                <h3 className="text-2xl font-semibold mb-4">Standard</h3>
+                <p className="text-gray-600 mb-4">Pour les petites entreprises</p>
+                <p className="text-4xl font-bold text-blue-500 mb-4">29€ / mois</p>
+                <ul className="text-gray-600 mb-6">
+                    <li>- Toutes les fonctionnalités de base</li>
+                    <li>- Support prioritaire</li>
+                </ul>
+                <button className="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition duration-300">
+                    Choisir
+                </button>
+            </div>
             </section>
         </main>
     );
