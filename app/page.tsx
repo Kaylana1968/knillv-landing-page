@@ -7,6 +7,7 @@ import caisse from "@/public/caisse.png";
 import fonct1 from "@/public/fonct1.png";
 import fonct2 from "@/public/fonct2.png";
 import fonct3 from "@/public/fonct3.png";
+import photo from "@/public/photo.png";
 
 
 export default function Page() {
@@ -154,9 +155,75 @@ export default function Page() {
                 <p className="text-gray-300 text-base mt-20 text-center">
                     Profitez d’un mois gratuit sans engagement. Annulable à tout moment avant la fin de la période d’essai.
                 </p>
-                
-           
             </section>
+            <section
+    id="nous-contacter"
+    className="flex flex-col items-center justify-center h-screen px-6 bg-[#ebf0f3]"
+>
+    <h2 className="text-4xl font-bold text-gray-700 mb-8">Nous Contacter</h2>
+    <p> Besoin d’un renseignement, envie d’essayer, ou un retour à partager ? On est là pour vous.</p>
+    <div className="flex flex-row items-center justify-between p-8 rounded-lg shadow-[8px_8px_16px_rgba(0,0,0,0.2),-8px_-8px_16px_rgba(255,255,255,0.5)] bg-[#ebf0f3] w-full max-w-4xl">
+        {/* Formulaire */}
+        <form className="flex flex-col w-1/2">
+            <div className="mb-4">
+                <label htmlFor="name" className="block text-gray-600 font-medium mb-2">
+                    Nom
+                </label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full px-4 py-2 rounded-lg bg-[#ebf0f3] shadow-inner border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Votre nom"
+                    required
+                />
+            </div>
+            <div className="mb-4">
+                <label htmlFor="email" className="block text-gray-600 font-medium mb-2">
+                    Email
+                </label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full px-4 py-2 rounded-lg bg-[#ebf0f3] shadow-inner border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Votre email"
+                    required
+                />
+            </div>
+            <div className="mb-4">
+                <label htmlFor="message" className="block text-gray-600 font-medium mb-2">
+                    Message
+                </label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    className="w-full px-4 py-2 rounded-lg bg-[#ebf0f3] shadow-inner border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Votre message"
+                    required
+                ></textarea>
+            </div>
+            <button
+                type="submit"
+                className="w-full bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+            >
+                Envoyer
+            </button>
+        </form>
+        <div className="flex items-center justify-center w-1/2">
+            <div className="w-40 h-40 rounded-full bg-gray-300 flex items-center justify-center shadow-[4px_4px_8px_rgba(0,0,0,0.2),-4px_-4px_8px_rgba(255,255,255,0.5)] overflow-hidden border-4 border-white transition-transform duration-300 hover:scale-105">
+                <Image
+                    src={photo.src}
+                    alt="Photo"
+                    width={160}
+                    height={160}
+                    className="object-cover"
+                />
+            </div>
+        </div>
+            </div>
+        </section>
         </main>
     );
 }
