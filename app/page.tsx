@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import KnillvDark from "@/public/knillvDark.png";
+import kompact from "@/public/kompact.png";
 import caisse from "@/public/caisse.png";
 import fonct1 from "@/public/fonct1.png";
 import fonct2 from "@/public/fonct2.png";
@@ -138,18 +139,23 @@ export default function Page() {
                 <h2 className="text-4xl font-bold text-white mb-8  z-10">
                     Forfait annuel 
                 </h2>
-                <div className="flex flex-col items-center text-center p-6 rounded-lg shadow-[1.92px_1.92px_4.8px_hsl(0,0%,75%),-1.92px_-1.92px_4.8px_hsl(0,0%,100%),inset_-0.06px_-0.06px_0.24px_hsl(0,0%,75%),inset_0.06px_0.06px_0.24px_hsl(0,0%,100%)] bg-white/30 backdrop-blur-md z-10">
-                <h3 className="text-2xl font-semibold mb-4">Standard</h3>
-                <p className="text-gray-600 mb-4">Pour les petites entreprises</p>
-                <p className="text-4xl font-bold text-blue-500 mb-4">29€ / mois</p>
-                <ul className="text-gray-600 mb-6">
-                    <li>- Toutes les fonctionnalités de base</li>
-                    <li>- Support prioritaire</li>
-                </ul>
-                <button className="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition duration-300">
-                    Choisir
-                </button>
-            </div>
+                <div className="flex flex-col items-center text-center p-8 rounded-lg shadow-[1.92px_1.92px_4.8px_hsl(0,0%,75%),-1.92px_-1.92px_4.8px_hsl(0,0%,100%),inset_-0.06px_-0.06px_0.24px_hsl(0,0%,75%),inset_0.06px_0.06px_0.24px_hsl(0,0%,100%)] bg-white/10 backdrop-blur-md z-10">
+                <Image src={kompact.src} alt="Logo de Kompact" width={200} height={200} />
+                
+                <p className="text-gray-300 mb-2">
+                    <span className="text-7xl font-bold">297€</span>
+                    <span className="text-4xl font-medium"> / an</span>
+                </p>
+                
+                <p className="text-blue-300 text-base">
+                    soit <span className="text-2xl font-semibold">24</span><span className="text-sm align-super">€75</span> / mois
+                </p>
+                </div>
+                <p className="text-gray-300 text-base mt-20 text-center">
+                    Profitez d’un mois gratuit sans engagement. Annulable à tout moment avant la fin de la période d’essai.
+                </p>
+                
+           
             </section>
         </main>
     );
